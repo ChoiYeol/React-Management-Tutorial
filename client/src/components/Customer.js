@@ -5,16 +5,16 @@ class Customer extends React.Component {
 
       render(){
         return(
-          <div>
+
             <TableRow>
-            <TableCell>{this.props.id}</TableCell>
-            <TableCell><img src={this.props.image} alt="profile" /></TableCell>
-            <TableCell> {this.props.name}</TableCell>
-            <TableCell> {this.props.birthday}</TableCell>
-            <TableCell> {this.props.gender}</TableCell>
-            <TableCell> {this.props.job}</TableCell>
+              <TableCell>{this.props.id}</TableCell>
+              <TableCell><img src={this.props.image} alt="profile" /></TableCell>
+              <TableCell> {this.props.name}</TableCell>
+              <TableCell> {this.props.birthday}</TableCell>
+              <TableCell> {this.props.gender}</TableCell>
+              <TableCell> {this.props.job}</TableCell>
             </TableRow>
-          </div>
+   
         );
       }
 }
