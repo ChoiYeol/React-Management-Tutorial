@@ -1,8 +1,26 @@
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 
-// Connection URL
-const url = 'mongodb://localhost:27017';
+
+몽구스 쓰기위한거고 실제로 연결도 했지만 몽구스 안쓴다함
+const mongoose = require('mongoose');
+require('dotenv').config({path:'variables.env'});
+
+mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true}, (err, client) => {
+  if(err){
+    console.log(err);
+  }
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  mongoose.close();
+});
+
+
+
+
+
+
+
+/*
+      ////////////this is not mongoose///////////////
 
 // Database Name
 const dbName = 'myproject';
@@ -18,19 +36,38 @@ MongoClient.connect(url, function(err, client) {
     client.close();
   });
 });
+//////ddddddd
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://root:0814@education-lxzxy.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 
-const insertDocuments = function(db, callback) {
-  // Get the documents collection
-  const collection = db.collection('documents');
-  // Insert some documents
-  collection.insertMany([
-    {a : 1}, {a : 2}, {a : 3}
-  ], function(err, result) {
-    assert.equal(err, null);
-    assert.equal(3, result.result.n);
-    assert.equal(3, result.ops.length);
-    console.log("Inserted 3 documents into the collection");
-    callback(result);
-  });
-}
+*/
+[
+  {
+        'id':1,
+        'image': 'https://placeimg.com/64/64/any',
+        'name':'yeol',
+        'birthday':'950814',
+        'gender':'man',
+        'job':'programer'
+  },
+  {     'id':2,
+        'image': 'https://placeimg.com/64/64/1',
+        'name':'bang',
+        'birthday':'450814',
+        'gender':'girl',
+        'job':'programer'
+  },
+  {     'id':3,
+        'image': 'https://placeimg.com/64/64/2',
+        'name':'bbi',
+        'birthday':'900814',
+        'gender':'guy',
+        'job':'programer'
+  }]

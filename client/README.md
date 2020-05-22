@@ -1,3 +1,10 @@
+
+client: react-create-app  즉 react  클라이언트 포트 3000
+server: express 미들웨어를 사용 포트 5000 으로 서버 연결
+database: postgresql 을 이용 server 코드 내부에 설계하여 server에서 값을 넘겨줄때 sql값을 넘김
+proxy : client에서 서버에서 넘겨준 값을 받을때 사용 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
